@@ -1,7 +1,7 @@
 import Panel from "./components/panel"
 import ArrowR from "./assets/ArrowR.svg"
 import ArrowL from "./assets/ArrowL.svg"
-import RJ45 from "./assets/rj45.svg"
+import RJ45 from "./assets/RJ45.svg"
 import HCFlag from "./assets/HCFlag.svg"
 import Screw from "./assets/Screw.svg"
 

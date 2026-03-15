@@ -56,7 +56,7 @@ function App() {
           </Panel>
           <Panel units={1}><div className="flex justify-center items-center h-full flex-col"><p className="pl-4 pt-4 text-2xl content text-center">Checkout the FaQ on the Slack for more!</p><p><a href="https://hackclub.enterprise.slack.com/docs/T0266FRGM/F0AMHLB80E4" className="text-blue-500 underline">Slack Canvas↗</a></p></div></Panel>
           <Panel units={1} filler></Panel>
-          <Panel units={2} ><div className="flex flex-col justify-center items-center gap-4"><p>What are you waiting for? Get Rack'ing NOW!</p> <button className="h-12 w-16 bg-green-500 rounded-md">
+          <Panel units={2} ><div className="flex flex-col justify-center items-center gap-4 content h-full"><p>What are you waiting for? Get Rack'ing NOW!</p> <button className="h-12 w-28 bg-green-500 rounded-md">
             <div className="h-full p-1 flex flex-row items-center">
               <div className="flex flex-col justify-between h-full">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-600"></div>

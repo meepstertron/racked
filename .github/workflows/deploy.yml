@@ -2,7 +2,7 @@ name: Build and Deploy
 permissions: write-all
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:

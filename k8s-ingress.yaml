@@ -17,3 +17,14 @@ spec:
             name: racked-website
             port:
               number: 80
+
+  - host: racked.hexagonical.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: racked-website
+            port:
+              number: 80

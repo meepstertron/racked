@@ -1,120 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Panel from "./components/panel"
+import ArrowR from "./assets/ArrowR.svg"
+import ArrowL from "./assets/ArrowL.svg"
+import RJ45 from "./assets/rj45.svg"
+import HCFlag from "./assets/HCFlag.svg"
+import Screw from "./assets/Screw.svg"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="bg-[#1B1B1B] flex justify-center">
+      <img src={HCFlag} alt="" width={128} className="fixed top-0 left-4 z-50 invert"/>
+      <div className=" min-h-screen w-screen relative max-w-[1080px]">
 
-      <div className="ticks"></div>
+        <div className="absolute inset-0 flex flex-row justify-between pointer-events-none">
+          <div className="bg-[#d9d9d9] w-28 h-full flex justify-center">
+            <div className="w-14 h-full bg-[#BABABA] shadow-inner"></div>
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <div className="bg-[#d9d9d9] w-28 h-full flex justify-center">
+            <div className="w-14 h-full bg-[#BABABA] shadow-inner"></div>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <div className="relative z-10 flex flex-col h-full w-full gap-2.5">
+          <Panel units={2}>
+            <div className="h-full w-full flex items-center justify-center">
+            <div className="flex flex-row gap-6">
+              <img src={ArrowR} />
+              <h1 className="font-black text-8xl title">Rack'ed</h1>
+              <img src={ArrowL} />
+            </div>
+            </div>
+          </Panel>
+          <Panel units={1} filler></Panel>
+          <Panel units={2}><div className="p-4 text-2xl content">
+            Not everyone can afford to have a full server rack... <br/> So build a mini one! Design a module for a standardized 10" rack, and we'll ship you the rack + a grant to make it. Infinitely customizable, desk-sized, and lowkey a fashion statement.
+            </div></Panel>
+          <Panel units={1}><div className="h-full w-full flex flex-row p-4 justify-between"><img src={RJ45} /><img src={RJ45} /><img src={RJ45} /><img src={RJ45} /><img src={RJ45} /><img src={RJ45} /></div></Panel>
+          <Panel units={1}><div className="flex flex-row items-center h-full pl-4"><h2 className="text-4xl content">Questions You <span className="italic">might ask?</span></h2></div></Panel>
+          <Panel units={2}>
+            <div className="pl-4 pt-4">  
+              <h3 className="text-3xl content italic">How does the grant work?</h3>
+              <p className="text-2xl content pl-4">For every hour logged with Hackatime/Lapse you get 4 Screws 
+                <span className="whitespace-nowrap mr-1 ml-0.5">
+                  <img src={Screw} width={24} className="inline-block align-middle" />
+                </span>
+                depending on the complexity of your module you may get up to 4x the Screws (so 16, thats four times the racky’ness!!111!) you can choose between getting a grant to make your module or getting a rack.</p>
+            </div>
+          </Panel>
+          <Panel units={1}></Panel>
+          <Panel units={2}>
+            <div className="pl-4 pt-4">  
+              <h3 className="text-3xl content italic">But racks are just for servers?</h3>
+              <p className="text-2xl content pl-4">Nope, not at all! A rack is just a way of organizing things, if you are more interested in audio you could make a audio rack, if you are more of a desk guy you could make something blinky that just looks cool! Or something to organize your growing collection of hackclub stickers? </p>
+            </div>
+          </Panel>
+          <Panel units={1}><div className="flex justify-center items-center h-full flex-col"><p className="pl-4 pt-4 text-2xl content text-center">Checkout the FaQ on the Slack for more!</p><p><a href="https://hackclub.enterprise.slack.com/docs/T0266FRGM/F0AMHLB80E4" className="text-blue-500 underline">Slack Canvas↗</a></p></div></Panel>
+          <Panel units={1} filler></Panel>
+          <Panel units={2} ><div className="flex flex-col justify-center items-center gap-4"><p>What are you waiting for? Get Rack'ing NOW!</p> <button className="h-12 w-16 bg-green-500 rounded-md">
+            <div className="h-full p-1 flex flex-row items-center">
+              <div className="flex flex-col justify-between h-full">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-600"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-green-600"></div>
+              </div>
+
+              <span className="flex-1 text-center text-white content">RSVP</span>
+
+              <div className="flex flex-col justify-between h-full">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-600"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-green-600"></div>
+              </div>
+            </div>
+          </button></div></Panel>
+        </div>
+
+      </div>
+    </div>
   )
 }
 

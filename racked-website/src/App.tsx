@@ -6,6 +6,14 @@ import HCFlag from "./assets/HCFlag.svg"
 import Screw from "./assets/Screw.svg"
 
 function App() {
+  function sizeBigBoxBecauseMobileIsAss() {
+    if (window.innerWidth < 768) {
+      return 3
+    } else {
+      return 2
+    }
+  }
+
   return (
     <div className="bg-[#1B1B1B] flex justify-center">
       <img src={HCFlag} alt="" width={128} className="fixed top-0 left-4 z-50 md:invert"/>
@@ -50,12 +58,12 @@ function App() {
               </div>
             </div>
           </button></div></Panel>
-          <Panel units={1} className=""><div className="h-full w-full flex flex-row p-4 justify-between items-center"><img className="h-12 md:h-full" src={RJ45} /><img className="h-12 md:h-full" src={RJ45} /><img className="h-12 md:h-full" src={RJ45} /><img className="h-12 md:h-full" src={RJ45} /><img className="h-12 md:h-full" src={RJ45} /><img className="h-12 md:h-full" src={RJ45} /></div></Panel>
+          <Panel units={1} className=" overflow-hidden"><div className="h-full w-full flex flex-row p-4 justify-between items-center"><img className="h-10 md:h-full" src={RJ45} /><img className="h-10 md:h-full" src={RJ45} /><img className="h-10 md:h-full" src={RJ45} /><img className="h-10 md:h-full" src={RJ45} /><img className="hidden md:block" src={RJ45} /><img className="hidden md:block" src={RJ45} /></div></Panel>
           <Panel units={1}><div className="flex flex-row items-center h-full pl-4"><h2 className="text-2xl md:text-4xl content">Questions You <span className="italic">might ask?</span></h2></div></Panel>
-          <Panel units={2}>
+          <Panel units={sizeBigBoxBecauseMobileIsAss()}>
             <div className="pl-4 pt-4">  
               <h3 className="text-2xl md:text-3xl content italic">How does the grant work?</h3>
-              <p className="text-1xl md:text-2xl content pl-4">For every hour logged with Hackatime/Lapse you get 4 Screws 
+              <p className="text-sm md:text-2xl content pl-4">For every hour logged with Hackatime/Lapse you get 4 Screws 
                 <span className="whitespace-nowrap mr-1 ml-0.5">
                   <img src={Screw} width={24} className="inline-block align-middle" />
                 </span>
@@ -63,13 +71,13 @@ function App() {
             </div>
           </Panel>
           <Panel units={1} className="hidden md:block"></Panel>
-          <Panel units={2}>
+          <Panel units={sizeBigBoxBecauseMobileIsAss()} >
             <div className="pl-4 pt-4">  
               <h3 className="text-2xl md:text-3xl content italic">But racks are just for servers?</h3>
-              <p className="text-1xl md:text-2xl content pl-4">Nope, not at all! A rack is just a way of organizing things, if you are more interested in audio you could make a audio rack, if you are more of a desk guy you could make something blinky that just looks cool! Or something to organize your growing collection of hackclub stickers? </p>
+              <p className="text-sm md:text-2xl content pl-4">Nope, not at all! A rack is just a way of organizing things, if you are more interested in audio you could make a audio rack, if you are more of a desk guy you could make something blinky that just looks cool! Or something to organize your growing collection of hackclub stickers? </p>
             </div>
           </Panel>
-          <Panel units={1}><div className="flex justify-center items-center h-full flex-col"><p className="pl-4 pt-4 text-2xl content text-center">Checkout the FaQ on the Slack for more!</p><p><a href="https://hackclub.enterprise.slack.com/docs/T0266FRGM/F0AMHLB80E4" className="text-blue-500 underline">Slack Canvas↗</a></p></div></Panel>
+          <Panel units={1}><div className="flex justify-center items-center h-full flex-col"><p className="pl-4 pt-4 text-1xl md:text-2xl content text-center">Check out the FaQ on the Slack for more!</p><p><a href="https://hackclub.enterprise.slack.com/docs/T0266FRGM/F0AMHLB80E4" className="text-blue-500 underline">Slack Canvas↗</a></p></div></Panel>
           <Panel units={1} filler className="hidden md:block"></Panel>
           <Panel units={2} ><div className="flex flex-col justify-center items-center gap-4 content h-full"><p>What are you waiting for? Get Rack'ing NOW!</p> <button className="h-12 w-28 bg-green-500 rounded-md">
             <div className="h-full p-1 flex flex-row items-center">

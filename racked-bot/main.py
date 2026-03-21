@@ -1,10 +1,11 @@
 import fastapi
 import slack_bolt
 import slack_bolt.adapter.fastapi
+import os
 
 
 app = fastapi.FastAPI()
-slack_app = slack_bolt.App(token="xoxb-your-slack-bot-token", signing_secret="your-slack-signing-secret")
+slack_app = slack_bolt.App(token=os.environ["SLACK_BOT_TOKEN"], signing_secret=os.environ["SLACK_SIGNING_SECRET"])
 
 FORM_ID = "ixoUHB5zNFus"
 CHANNEL_ID = "C0AL7ULKD3R"

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: racked-docs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: racked-docs
+  template:
+    metadata:
+      labels:
+        app: racked-docs
+    spec:
+      containers:
+      - name: racked-docs
+        image: ghcr.io/meepstertron/racked-docs:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: racked-docs
+spec:
+  type: ClusterIP
+  selector:
+    app: racked-docs
+  ports:
+  - port: 80
+    targetPort: 80

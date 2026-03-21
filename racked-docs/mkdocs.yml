@@ -1,0 +1,5 @@
+site_name: Racked Docs
+theme:
+  name: material
+  palette:
+    scheme: slate 

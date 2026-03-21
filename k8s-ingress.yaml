@@ -24,6 +24,13 @@ spec:
             name: racked-bot
             port:
               number: 80
+      - path: /docs
+        pathType: Prefix
+        backend:
+          service:
+            name: racked-docs
+            port:
+              number: 80
 
   - host: racked.hexagonical.xyz
     http:

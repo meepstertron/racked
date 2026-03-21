@@ -17,6 +17,13 @@ spec:
             name: racked-website
             port:
               number: 80
+      - path: /websocket
+        pathType: Prefix
+        backend:
+          service:
+            name: racked-bot
+            port:
+              number: 80
 
   - host: racked.hexagonical.xyz
     http:
@@ -28,3 +35,4 @@ spec:
             name: racked-website
             port:
               number: 80
+  

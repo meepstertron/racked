@@ -29,6 +29,13 @@ jobs:
         file: ./racked-website/Dockerfile
         push: true
         tags: ghcr.io/${{ github.actor }}/racked-website:latest
+    - name: Build and push bot Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./racked-bot
+        file: ./racked-bot/Dockerfile
+        push: true
+        tags: ghcr.io/${{ github.actor }}/racked-bot:latest
 
     - name: Set up Kubeconfig
       uses: azure/setup-kubectl@v3
@@ -45,5 +52,7 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f k8s-deployment.yaml
+        kubectl apply -f k8s-bot-deployment.yaml
         kubectl apply -f k8s-ingress.yaml
         kubectl rollout restart deployment/racked-website
+        kubectl rollout restart deployment/racked-bot

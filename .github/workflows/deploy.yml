@@ -37,10 +37,19 @@ jobs:
         push: true
         tags: ghcr.io/${{ github.actor }}/racked-bot:latest
 
+    - name: Build and push docs Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./racked-docs
+        file: ./racked-docs/Dockerfile
+        push: true
+        tags: ghcr.io/${{ github.actor }}/racked-docs:latest
+        
     - name: Set up Kubeconfig
       uses: azure/setup-kubectl@v3
       with:
         version: 'latest'
+
 
     - name: Configure kubeconfig
       run: |
@@ -54,5 +63,7 @@ jobs:
         kubectl apply -f k8s-deployment.yaml
         kubectl apply -f k8s-bot-deployment.yaml
         kubectl apply -f k8s-ingress.yaml
+        kubectl apply -f k8s-docs-deployment.yaml
         kubectl rollout restart deployment/racked-website
         kubectl rollout restart deployment/racked-bot
+        kubectl rollout restart deployment/racked-docs

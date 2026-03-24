@@ -13,9 +13,11 @@ function App() {
 
   const slides = [
   { src: MiniRack001, credit: "Jeff Geerling", href: "https://www.jeffgeerling.com/blog/2025/project-mini-rack-compact-and-portable-homelabs/", caption: "Jeff's mini rack" },
+  {src: "https://cdn.hackclub.com/019d1ce7-b386-7d30-a433-d11af18fa3c2/image.png", credit: "Jan Koch", href: "https://hackclub.enterprise.slack.com/team/U087PR1B2HX", caption: "Example of a simple cover plate!" },
+  
   { src: "https://preview.redd.it/mini-unifi-lab-i-built-for-my-parents-with-ha-and-plex-v0-3qq19ouj2eqg1.jpg?width=1080&crop=smart&auto=webp&s=170c3a654ca422dc7d2b439061b3d60b2f2c8c30", credit: "u/gargravarr2112", href: "https://www.reddit.com/r/minilab/comments/1rzqhra/mini_unifi_lab_i_built_for_my_parents_with_ha_and/", caption: "A mini rack for home automation and media" },
   { src: "https://preview.redd.it/i-made-a-120mm-fan-1u-plate-v0-7qbz3e2lhyng1.jpg?width=1080&crop=smart&auto=webp&s=73a70e3c9e9a3b938b58b6caa048568ec5c3afc9", credit: "u/PitBossKitchen", href: "https://www.reddit.com/r/minilab/comments/1rorrdn/i_made_a_120mm_fan_1u_plate/", caption: "A 1U fan plate" },
-  {src: "https://cdn.hackclub.com/019d1ce7-b386-7d30-a433-d11af18fa3c2/image.png", credit: "Jan Koch", href: "https://hackclub.enterprise.slack.com/team/U087PR1B2HX", caption: "Example of a simple cover plate!" },
+  
 ]
 
   

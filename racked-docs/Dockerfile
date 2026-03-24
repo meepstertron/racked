@@ -8,5 +8,5 @@ COPY . .
 RUN mkdocs build
 
 FROM nginx:alpine
-COPY --from=builder /docs/site /usr/share/nginx/ht
+COPY --from=builder /docs/site /usr/share/nginx/html/docs/
 EXPOSE 80

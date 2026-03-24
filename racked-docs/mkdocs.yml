@@ -1,4 +1,5 @@
 site_name: Racked Docs
+site_url: https://racked.dino.icu/docs/
 theme:
   name: material
   palette:

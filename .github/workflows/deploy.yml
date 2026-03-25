@@ -40,8 +40,8 @@ jobs:
     - name: Build and push docs Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./racked-docs
-        file: ./racked-docs/Dockerfile
+        context: ./racked-docs/my-project
+        file: ./racked-docs/my-project/Dockerfile
         push: true
         tags: ghcr.io/${{ github.actor }}/racked-docs:latest
         

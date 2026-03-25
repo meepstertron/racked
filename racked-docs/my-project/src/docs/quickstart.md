@@ -1,8 +1,16 @@
 # Quickstart
 
-## Design Constraints
+## What is a 10" Rack Module?
 
-    - Must
+Typically its 
+
+### Spec
+
+
+## Requirements
+
+- Must mount and fit in a 10" rack
+
 
 ## I do not know what im doing!
 

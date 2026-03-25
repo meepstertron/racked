@@ -29,7 +29,6 @@ const getNodeText = (children: React.ReactNode): string =>
 function App() {
 
   const [currentSlug, setCurrentSlug] = useState(getSlugFromPath)
-  const [currentHash, setCurrentHash] = useState('')
 
   useEffect(() => {
     const handlePopState = () => {

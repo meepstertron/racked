@@ -55,7 +55,7 @@ function App() {
   const nav = getNav()
 
   const navigateTo = (slug: string, heading?: string) => {
-    const url = slug === 'index' ? '/' : `/${slug}`
+    const url = slug === 'index' ? '/' : `/docs/${slug}`
     window.history.pushState(null, '', url)
     setCurrentSlug(slug)
     if (heading) {

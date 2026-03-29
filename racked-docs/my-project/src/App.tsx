@@ -102,6 +102,9 @@ function App() {
             return <h2 id={toHeadingId(headingText)} className="text-xl font-semibold mt-6">{children}</h2>
           },
           p: ({children}) => <p className="text-sm leading-relaxed">{children}</p>,
+          ul: ({children}) => <ul className="list-disc list-inside">{children}</ul>,
+          ol: ({children}) => <ol className="list-decimal list-inside">{children}</ol>,
+          a: ({href, children}) => <a href={href} className="text-green-400 hover:underline">{children}</a>,
         }}>
           {page?.content ?? 'Page not found'}
         </ReactMarkdown>

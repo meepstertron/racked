@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import { getNav, getPage } from './lib/docs'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 const getSlugFromPath = () => {
   const path = decodeURIComponent(window.location.pathname).replace(/^\//, '')
@@ -91,7 +92,7 @@ function App() {
         </div>
         <div className='h-full w-px bg-[#808080] mx-2' />
         <div className='w-full prose-invert p-8 overflow-y-scroll'>
-        <ReactMarkdown components={{
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} components={{
           h1: ({children}) => {
             const headingText = getNodeText(children)
             return <h1 id={toHeadingId(headingText)} className="text-3xl font-bold">{children}</h1>

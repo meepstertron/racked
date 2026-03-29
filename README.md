@@ -18,9 +18,10 @@ You design your own module for a standardized 10" rack, and get a rack and a gra
     - /racked-website (Lander)
     - /.github
         - /workflows (CI/CD)
-    - 
-        
-
+    - k8s-deployment.yaml (Website)
+    - k8s-bot-deployment.yaml (Bot)
+    - k8s-docs-deployment.yaml (Docs)
+    - k8s-ingress.yaml (Ingress)
 
 ## Technologies used
 
